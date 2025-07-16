@@ -45,22 +45,26 @@
     - 극값이 존재하는 시계열 데이터에서 특히 효과적
 3. **실증 검증**:
     
-    `Huber Loss 훈련 vs MSE 훈련:
+    ```python
+    Huber Loss 훈련 vs MSE 훈련:
     - 난방철: 22.63 vs 24.1 (약 6% 개선)
-    - 비난방철: 9.76 vs 10.8 (약 10% 개선)`
+    - 비난방철: 9.76 vs 10.8 (약 10% 개선)
+    ```
     
 
-## < 모델 아키텍처 >
+## 🏗️ 모델 아키텍처
 
 ### 스태킹 앙상블 구조
 
-`시즌별 분할
+```python
+시즌별 분할
 ├── 난방철 모델 (10월~4월)
 │   ├── Level 0: Prophet + CatBoost
 │   └── Level 1: Ridge Meta-learner
 └── 비난방철 모델 (5월~9월)
     ├── Level 0: Prophet + CatBoost  
-    └── Level 1: Ridge Meta-learner`
+    └── Level 1: Ridge Meta-learner
+```
 
 ### 모델 선택 근거
 
